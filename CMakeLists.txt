@@ -42,8 +42,8 @@ add_shader(main simple_shader.frag)
 # Copy models to build directory
 add_custom_command(
         TARGET main POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy
+        COMMAND ${CMAKE_COMMAND} -E copy_directory
                 ${CMAKE_SOURCE_DIR}/models
-                ${CMAKE_CURRENT_BINARY_DIR}/model)
+                ${CMAKE_CURRENT_BINARY_DIR}/models)
 # Link all external libs to main
 target_link_libraries(main ${CONAN_LIBS})
