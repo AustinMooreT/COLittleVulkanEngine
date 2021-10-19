@@ -30,7 +30,18 @@ endfunction(add_shader)
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()
 # Glob sources and create executable
-file(GLOB SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
+file(GLOB SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/first_app.cpp
+                  ${CMAKE_CURRENT_SOURCE_DIR}/src/keyboard_movement_controller.cpp
+                  ${CMAKE_CURRENT_SOURCE_DIR}/src/lve_camera.cpp
+                  ${CMAKE_CURRENT_SOURCE_DIR}/src/lve_device.cpp
+                  ${CMAKE_CURRENT_SOURCE_DIR}/src/lve_game_object.cpp
+                  ${CMAKE_CURRENT_SOURCE_DIR}/src/lve_model.cpp
+                  ${CMAKE_CURRENT_SOURCE_DIR}/src/lve_pipeline.cpp
+                  ${CMAKE_CURRENT_SOURCE_DIR}/src/lve_renderer.cpp
+                  ${CMAKE_CURRENT_SOURCE_DIR}/src/lve_swap_chain.cpp
+                  ${CMAKE_CURRENT_SOURCE_DIR}/src/lve_window.cpp
+                  ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
+                  ${CMAKE_CURRENT_SOURCE_DIR}/src/simple_render_system.cpp)
 add_executable(main ${SOURCES})
 # Include directory for tinyObjectLoader
 # TODO maybe replace this with something a bit more robust like AssImp
